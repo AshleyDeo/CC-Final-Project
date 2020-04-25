@@ -1,10 +1,11 @@
+//test file
 let capture;
 
 function setup() {
     createCanvas(390, 240);
     capture = createCapture(VIDEO);
     capture.size(320, 240);
-    //capture.hide();
+    capture.hide();
 }
 
 function draw() {
@@ -21,11 +22,12 @@ function draw() {
 function keyPressed() {
     if (keyCode === LEFT_ARROW) {
         noLoop();
-        for (let y = 0; y < height; y += 6) {
-            for (let x = 0; x < width; x += 6) {
+        capture.loadPixels();
+        for (let y = 0; y < height; y += 10) {
+            for (let x = 0; x < width; x += 10) {
                 const i = y * width + x;
                 const darkness = (255 - capture.pixels[i * 4]) / 255;
-                const radius = 6 * darkness;
+                const radius = 10 * darkness;
                 ellipse(x, y, radius, radius);
             }
         }
