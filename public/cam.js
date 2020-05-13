@@ -6,6 +6,12 @@ function setup() {
     capture = createCapture(VIDEO);
     capture.size(320, 240);
     capture.hide();
+
+    /*colors = new tracking.ColorTracker(['cyan']);
+    //start detecting the tracking
+    colors.on('track', function (event) {
+        trackingData = event.data
+    });*/
 }
 
 function draw() {
@@ -150,3 +156,19 @@ function draw() {
     image(capture, 0, 0, 640, 480);
 }
 */
+
+/* if (keyCode === RIGHT_ARROW) {
+   if (event.data.length === 0) {
+     return;
+   }else {
+     event.data.forEach(function(rect) {})
+  }
+     if (trackingData) { //if there is tracking data to look at, then...
+         for (var i = 0; i < trackingData.length; i++) { //loop through each of the detected colors
+             console.log(trackingData[i].x)
+             let newX = floor(trackingData[i].x / cell_size);
+             let newY = floor(trackingData[i].y / cell_size);
+             world[newX][newY].alive = trackingData[i].width%2; // create conway board
+         }
+     }
+ }*/
