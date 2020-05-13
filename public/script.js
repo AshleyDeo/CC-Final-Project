@@ -67,7 +67,7 @@ class Cell {
         //draw
         noStroke();
         //rect(200 + (this.x * cell_size), 200 + (this.y * cell_size), cell_size, cell_size);
-        rect(800 + (this.x * cell_size), this.y * cell_size, cell_size, cell_size);
+        rect(700 + (this.x * cell_size), this.y * cell_size, cell_size, cell_size);
         //rect(this.x * cell_size, 280 + (this.y * cell_size), cell_size, cell_size);
     }
 }
@@ -107,7 +107,7 @@ function draw() {
             var b = capture.pixels[i + 3];
             var avg = (r + g + b) / 3;
             //console.log(i/4);
-            if (avg > 127) { //copy pixels to board
+            if (avg > 160) { //copy pixels to board
                 fill(255); //alive
                 if (!drawConway) {
                     world[i / 4].alive = true;
